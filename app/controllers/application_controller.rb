@@ -9,8 +9,6 @@ class ApplicationController < ActionController::Base
     !!current_user
   end
 
-
-
   def current_cart
     current_user.current_cart if current_user
   end
