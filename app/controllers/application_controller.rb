@@ -9,9 +9,7 @@ class ApplicationController < ActionController::Base
     !!current_user
   end
 
-  def verify_user
-    redirect_to new_user_registration_path unless logged_in?
-  end
+  
 
   def current_cart
     current_user.current_cart if current_user
