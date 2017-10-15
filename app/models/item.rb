@@ -6,5 +6,4 @@ class Item < ActiveRecord::Base
   def self.available_items
     self.all.select { |item| item.inventory >= 1 }
   end
-
 end
