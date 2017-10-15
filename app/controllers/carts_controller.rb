@@ -4,10 +4,11 @@ class CartsController < ApplicationController
   end
 
   def checkout
-    cart = Cart.find(params[:id])
-    cart.checkout
-    cart.save
-    redirect_to cart_path(cart), { notice: 'Checkout was successful!' }
+    @cart = Cart.find(params[:id])
+    current_cart.checkout
+    current_user.current_cart = nil
+    current_user.save
+    redirect_to cart_path(@cart), { notice: 'Checkout was successful!' }
   end
 
 
