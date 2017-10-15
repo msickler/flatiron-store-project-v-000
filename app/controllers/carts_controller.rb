@@ -7,7 +7,7 @@ class CartsController < ApplicationController
     cart = Cart.find(params[:id])
     cart.checkout
     cart.save
-    redirect_to cart_path(cart),  { notice: 'Checkout successful!'}
+    redirect_to cart_path(cart),  { notice: 'Checkout was successful'}
   end
 
 
